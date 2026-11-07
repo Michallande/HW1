@@ -1,12 +1,12 @@
 public class Assignment01Q05 {
 
-    public static int findShortestPath(int[][] matrix, int i, int j) {
+    public static int findShortestPath(int[][] m, int i, int j) {
         // מקרה קצה: המסלול מקודקוד לעצמו הוא באורך 0
         if (i == j) {
             return 0;
         }
 
-        int n = matrix.length;
+        int n = m.length;
 
         // מערך מרחקים (-1 מסמן שטרם ביקרנו בקודקוד)
         int[] dist = new int[n];
@@ -32,7 +32,7 @@ public class Assignment01Q05 {
             // מעבר על כל השכנים האפשריים v של u
             for (int v = 0; v < n; v++) {
                 // בדיקה: קיים חץ מ-u ל-v וגם טרם ביקרנו ב-v
-                if (matrix[u][v] == 1 && dist[v] == -1) {
+                if (m[u][v] == 1 && dist[v] == -1) {
                     dist[v] = dist[u] + 1; // עדכון המרחק
 
                     // יציאה מוקדמת ברגע שהגענו לקודקוד היעד j
